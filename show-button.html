@@ -1,0 +1,29 @@
+<script>
+  $(function() {
+var iframe = $('#player1')[0];
+var player = $f(iframe);
+var status = $('.status');
+var playButton = document.getElementById("play-button");
+playButton.addEventListener("click", function() {
+  player.api("play");
+});
+
+var pauseButton = document.getElementById("pause-button");
+pauseButton.addEventListener("click", function() {
+  player.api("pause");
+});
+setTimeout(function () {
+player.addEvent('ready', function() {
+player.addEvent('playProgress', onPlayProgress);
+});
+});
+function onPlayProgress(data, id) {
+
+var Time = data.seconds; 
+    if (Time >= '4784') {
+    $('.row-number-7').show();
+	}  
+
+}
+});
+</script>
